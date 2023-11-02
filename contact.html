@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(83, 102, 96);
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            place-items: center;
+        }
+        h1 {
+            text-align: center;
+        }
+            .contact-form {
+    width: 50vw;
+    padding: 20px;
+    place-items: center;
+    display: grid;
+    /* border: 1px solid #ddd; */
+    background-color: #242530f7;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px black;
+}
+        label, input, textarea {
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: .5rem;
+            border: none;
+            width: 14rem;
+        }
+
+        #icons{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-form">
+            <form action="submit_form.php" method="post">
+                <!-- <label for="name">Name:</label> -->
+                <input placeholder="Name" type="text" id="name" name="name" required>
+
+                <!-- <label for="email">Email:</label> -->
+                <input placeholder="Email" type="email" id="email" name="email" required>
+
+                <!-- <label for="message">Message:</label> -->
+                <textarea placeholder="Message" id="message" name="message" rows="4" required></textarea>
+
+                <input id="submit" type="submit" value="Submit">
+            </form>
+            
+        </div>
+        <div id="icons">
+            <i class= "fa fa-brands fa-instagram" style="color: #e0e0e0;"></i>
+            <i class="fa fa-brands fa-twitter" style="color: #ffffff;"></i>
+            <i class="fa fa-brands fa-facebook" style="color: #ffffff;"></i>
+            <i class="fa fa-brands fa-linkedin" style="color: #ffffff;"></i>
+        </div>
+    </div>
+    <script>
+        document.getElementById("submit").addEventListener("click", function(event) {
+            event.preventDefault();
+            alert("Your Response is Succesfully Submit")
+            let name = document.getElementById("name");
+            name.value = "";
+            let email = document.getElementById("email");
+            email.value = "";
+            let Message = document.getElementById("message");
+            Message.value = "";
+        })
+    </script>
+</body>
+</html>
